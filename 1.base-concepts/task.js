@@ -29,17 +29,13 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
     if (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths) || percent < 0 || countMonths < 0) {
         return false;
     }
-
     
     const loanBody = amount - contribution;
 
-    
     const monthlyPayment = loanBody * (monthlyPercent + monthlyPercent / (Math.pow(1 + monthlyPercent, countMonths) - 1));
 
-    
     const totalAmount = monthlyPayment * countMonths;
 
-    
     const roundedTotalAmount = Math.round(totalAmount * 100) / 100;
 
     return roundedTotalAmount;
