@@ -1,7 +1,7 @@
 //Задание 1
 function getArrayParams(...arr) {
   if (arr.length === 0) {
-    return { max: max, min: min, avg: avg };
+    return { max: undefined, min: undefined, avg: undefined };
   }
 
   let min = Infinity;
