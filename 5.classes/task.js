@@ -99,31 +99,28 @@ class Library {
     }
 }
 
-// Ваш код для тестирования
-// ...
 
 
+const library = new Library("Центральная библиотека");
 
-// const library = new Library("Центральная библиотека");
+const novel = new NovelBook("Война и мир", 1869, 1225, "Лев Толстой");
+const magazine = new Magazine("National Geographic", 2021, 120);
+library.addBook(novel);
+library.addBook(magazine);
 
-// const novel = new NovelBook("Война и мир", 1869, 1225, "Лев Толстой");
-// const magazine = new Magazine("National Geographic", 2021, 120);
-// library.addBook(novel);
-// library.addBook(magazine);
-
-// const book1919 = library.findBookBy('releaseDate', 1919);
-// if (!book1919) {
-//     const book1919New = new Book("Тайные учения всех времен", 1919, 350, "Автор неизвестен");
-//     library.addBook(book1919New);
-// }
-
-
-// const borrowedBook = library.giveBookByName("Война и мир");
-// borrowedBook.state = 10;  // Установка состояния в 10 (поврежденная книга)
+const book1919 = library.findBookBy('releaseDate', 1919);
+if (!book1919) {
+    const book1919New = new Book("Тайные учения всех времен", 1919, 350, "Автор неизвестен");
+    library.addBook(book1919New);
+}
 
 
-// borrowedBook.fix();
+const borrowedBook = library.giveBookByName("Война и мир");
+borrowedBook.state = 10;  // Установка состояния в 10 (поврежденная книга)
 
 
-// library.addBook(borrowedBook);
+borrowedBook.fix();
+
+
+library.addBook(borrowedBook);
 
